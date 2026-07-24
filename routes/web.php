@@ -1,15 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/index', function () {
-    return 'Bobby Bernarddi Widjayanto';
-});
-
-Route::get('/articles/{id}', function ($id) {
-    return "Hi! Selamat Datang di Website Laravel" . $id;
-});
+Route::get('/',HomeController::class,'index');
+Route::get('/about', AboutController::class);
+Route::get('/article/{id}', AboutController::class);
